@@ -23,6 +23,20 @@ const Hero = () => {
       </select>
       <p className='px-1 text-sm text-gray-500 mt-1'> {pickupLocation ? pickupLocation : '>اپنی جگہ کا انتخاب کریں'}</p>
     </div>
+     {/* Pickup Location */}
+    <div className='w-full md:w-auto'>
+      <select 
+        className='w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500'
+        required
+        value={pickupLocation} onChange={(e)=>setpickupLocation(e.target.value)}
+      >
+        <option value=""> Drop Location</option>
+        {cityList.map((city, index) => (
+          <option key={index} value={city}>{city}</option>
+        ))}
+      </select>
+      <p className='px-1 text-sm text-gray-500 mt-1'> {pickupLocation ? pickupLocation : '>اپنی جگہ کا انتخاب کریں'}</p>
+    </div>
     <div className='w-full md:w-auto'>
      <label htmlFor="pickup-date">Pickup Date</label>
      <input type="date" id='pickup-date' cmin={new Date().toISOString().split('T')[0]} className='text-sm text-grey-500' required/>

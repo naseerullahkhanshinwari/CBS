@@ -14,7 +14,7 @@ import ManageBookings from './pages/owner/ManageBookings'
 import Login from './components/Login'
 
 
-const App = () => {
+const App = () => {  
   
   const [showLogin, setShowLogin] = useState(false)
   const isOwnerPath = useLocation().pathname.startsWith('/owner')
